@@ -1,13 +1,12 @@
 import css from "./Contact.module.css";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 import { useDispatch } from "react-redux";
 import { IoIosContact } from "react-icons/io";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 
-
 export default function Contact({ contact: { name, number, id } }) {
   const dispatch = useDispatch();
-  const handleDelete = (id) => {
+  const handleDelete = () => {
     dispatch(deleteContact(id));
   };
 
